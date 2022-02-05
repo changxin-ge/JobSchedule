@@ -70,12 +70,10 @@ class JobScheduleEnv(gym.Env):
         """
         return self.action_space
 
-    @property
-    def observation_space(self):
-        """ Observation space """
-        return self._get_obs()
+    def step(self, action):
+        """ Step """
+        raise NotImplementedError()
 
-    @property
-    def action_space(self):
-        """ Action space """
-        return self._get_actions()
+    def render(self, mode="human"):
+        """ Render """
+        raise NotImplementedError()
