@@ -9,7 +9,7 @@ import random
 
 class JobScheduleEnv(gym.Env):
     def __init__(self, config=None):
-        """ Job scheudle environment constructor
+        """ Job schedule environment constructor
 
         Args:
             config: configuration of the job schedule environment
@@ -32,11 +32,11 @@ class JobScheduleEnv(gym.Env):
         # initialization of the reset
         _ = self.reset()
 
-        # set obervation and action spaces
+        # set observation and action spaces
         self.action_space = gym.spaces.Discrete(self.jobs + 1)
         self.observation_space = gym.spaces.Dict({
             'action_mask': gym.spaces.Box(0, 1, shape=(self.jobs + 1,), dtype=np.bool_),
-            'job_obs': gym.spaces.Box(0.0, 1.0, shape=(self.jobs, 4), dtype=np.float),
+            'job_obs': gym.spaces.Box(0.0, 1.0, shape=(self.jobs, 4), dtype=np.float32),
         })
 
     def _set_config(self):

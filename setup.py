@@ -1,6 +1,6 @@
 import setuptools
 
-module_name = 'JobSchedule'
+module_name = 'JobScheduleEnv'
 setuptools.setup(
     name=module_name,
     version='0.0.1',
